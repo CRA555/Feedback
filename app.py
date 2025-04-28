@@ -13,13 +13,12 @@ Bookings_log = pd.read_csv('Booking.csv')
 # Now this code turns the data into the HTML files allowing for them to be read moved into templates to update the user, this code has been re-entered in other parts of this file to allow for information to be up to date. 
 pd.DataFrame.to_html(Customer_log, 'Customer_log.html', index=False)
 pd.DataFrame.to_html(Services_log, 'Services_pricing_log.html', index=False)
-pd.DataFrame.to_html(Bookings_log, 'Booking_log.html', table_id='D:/Exam code to re-upload/static/style.css')
+pd.DataFrame.to_html(Bookings_log, 'Booking_log.html', table_id='/workspaces/Feedback/static/style.css')
 
-#D:\Exam code to re-upload\app.py
 # Now this code takes the files and moves them into the templates folder while deleting the old HTML files so they do not cause a problems in the code, this code has been re-entered in other parts of this file to allow for information to be up to date.
-os.replace('D:/Exam code to re-upload/Customer_log.html', 'D:/Exam code to re-upload/templates/Customer_log.html')
-os.replace('D:/Exam code to re-upload/Services_pricing_log.html', 'D:/Exam code to re-upload/templates/Services_pricing_log.html')
-os.replace('D:/Exam code to re-upload/Booking_log.html', 'D:/Exam code to re-upload/templates/Booking_log.html')
+os.replace('/workspaces/Feedback/Customer_log.html', '/workspaces/Feedback/templates/Customer_log.html')
+os.replace('/workspaces/Feedback/Services_pricing_log.html', '/workspaces/Feedback/templates/Services_pricing_log.html')
+os.replace('/workspaces/Feedback/Booking_log.html', '/workspaces/Feedback/templates/Booking_log.html')
 
 # Now this code allows the values that require it to have the right number when used since some of the carbon footprint is multiplied. 
 def multiply(number_1, number_2):
@@ -264,7 +263,7 @@ app = Flask(__name__)
 def Homepage():
     Services_log = pd.read_csv('Services.csv')
     pd.DataFrame.to_html(Services_log, 'Services_pricing_log.html', index=False)
-    os.replace('D:/Exam code to re-upload/Services_pricing_log.html', 'D:/Exam code to re-upload/templates/Services_pricing_log.html')
+    os.replace('/workspaces/Feedback/Services_pricing_log.html', '/workspaces/Feedback/templates/Services_pricing_log.html')
     return render_template('Homepage.html')
 
 # Now this code takes the data contained within the booking CSV file and makes it accessible on the webpage for users to see. 
@@ -272,7 +271,7 @@ def Homepage():
 def Booking_table():
     Bookings_log = pd.read_csv('Booking.csv')
     pd.DataFrame.to_html(Bookings_log, 'Booking_log.html', index=False)
-    os.replace('D:/Exam code to re-upload/Booking_log.html', 'D:/Exam code to re-upload/templates/Booking_log.html')
+    os.replace('/workspaces/Feedback/Booking_log.html', '/workspaces/Feedback/templates/Booking_log.html')
     return render_template('Booking_log.html')
 
 # Now this segment of code gathers all of the needed information from the user then works out the total carbon footprint, then sends the user to the page which will display the total and a sales pitch to increase the chances of them using the service.
@@ -379,7 +378,7 @@ def Customer_booking():
 def Customer_table():
     Customer_log = pd.read_csv('Customer.csv', usecols=[0,2,3])
     pd.DataFrame.to_html(Customer_log, 'Customer_log.html', index=False)
-    os.replace('D:/Exam code to re-upload/Customer_log.html', 'D:/Exam code to re-upload/templates/Customer_log.html')
+    os.replace('/workspaces/Feedback/Customer_log.html', '/workspaces/Feedback/templates/Customer_log.html')
     return render_template('Customer_log.html')
 
 # Now this segment of code allows the user to sign up with the webpage, so if they haven't got a account it gets the data seen below checks to make sure no data in the system matches and logs the it into the system for the future. 
@@ -469,7 +468,7 @@ def Security_check_for_staff_record_amend():
             while email_check != Email and row_search <= len(check_list):
                 row_search =+1
                 if IndexError:
-                    os.remove('D:/Exam code to re-upload/Record amend.csv')
+                    os.remove('/workspaces/Feedback/Record amend.csv')
                     return render_template('Error_page_for_staff_record_deletion,html')
                 email_check = check_list[row_search].get('Email', '').strip()
             else:
@@ -485,7 +484,7 @@ def Security_check_for_staff_record_amend():
                         while email_check != Email and row_search <= len(check_list):
                             row_search =+1
                             if IndexError:
-                                os.remove('D:/Exam code to re-upload/Record amend.csv')
+                                os.remove('/workspaces/Feedback/Record amend.csv')
                                 return render_template('Error_page_for_staff_record_deletion,html')
                             email_check = check_list[row_search].get('Email', '').strip()
                         else:
@@ -504,7 +503,7 @@ def Security_check_for_staff_record_amend():
                                     New_data = check_list[int(row_search)].get('New data')
                                     amend_check = amend_record(File_requested, Data_column, Old_data, New_data)
                                     if amend_check == True:
-                                        os.remove('D:/Exam code to re-upload/Record amend.csv')
+                                        os.remove('/workspaces/Feedback/Record amend.csv')
                                         return render_template('Conformation_page_for_staff_record_amend.html')
                                     else:
                                         return render_template('Error_page_for_staff_record_amend.html')
@@ -532,7 +531,7 @@ def Security_check_for_staff_record_deletion():
                 File_requested = check_list[int(row_search)].get('File', '').strip()
                 deletion_check = delete_record(File_requested, Email)
                 if deletion_check == True:
-                    os.remove('D:/Exam code to re-upload/Record deletion.csv')
+                    os.remove('/workspaces/Feedback/Record deletion.csv')
                     return render_template('Conformation_page_for_staff_record_deletion.html')
                 else:
                     return render_template('Error_page_for_staff_record_deletion.html')
@@ -546,7 +545,7 @@ def Security_check_for_staff_record_deletion():
 def Services_pricing_log():
     Services_log = pd.read_csv('Services.csv')
     pd.DataFrame.to_html(Services_log, 'Services_pricing_log.html')
-    os.replace('D:/Exam code to re-upload/Services_pricing_log.html', 'D:/Exam code to re-upload/templates/Services_pricing_log.html')
+    os.replace('/workspaces/Feedback/Services_pricing_log.html', '/workspaces/Feedback/templates/Services_pricing_log.html')
     return render_template('Services_pricing_log.html')
 
 # Now this HTML file informs the user on the wide range of services this business offers alongside the cost and benefits of using their services. 
@@ -564,9 +563,9 @@ def Staff_homepage():
     pd.DataFrame.to_html(Customer_log, 'Customer_log.html')
     pd.DataFrame.to_html(Services_log, 'Services_pricing_log.html')
     pd.DataFrame.to_html(Bookings_log, 'Booking_log.html')
-    os.replace('D:/Exam code to re-upload/Customer_log.html', 'D:/Exam code to re-upload/templates/Customer_log.html')
-    os.replace('D:/Exam code to re-upload/Services_pricing_log.html', 'D:/Exam code to re-upload/templates/Services_pricing_log.html')
-    os.replace('D:/Exam code to re-upload/Booking_log.html', 'D:/Exam code to re-upload/templates/Booking_log.html')
+    os.replace('/workspaces/Feedback/Customer_log.html', '/workspaces/Feedback/templates/Customer_log.html')
+    os.replace('/workspaces/Feedback/Services_pricing_log.html', '/workspaces/Feedback/templates/Services_pricing_log.html')
+    os.replace('/workspaces/Feedback/Booking_log.html', '/workspaces/Feedback/templates/Booking_log.html')
     return render_template('Staff_homepage.html')
 
 # Now this HTML file allows the staff member to input the required data to alter a record stored within the system. 
