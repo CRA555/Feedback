@@ -1,6 +1,7 @@
 # Feedback
 This is the GitHub repository for feedback. 
 Hello and welcome, if you are reading this I trust you are able to use this makeshift website that contains a login and booking system for my exams. 
+If you need some help with making a booking, there is a video for yourself which explains how to make one, its in the files dicretory. 
 Once you have tested this webpage you will need to fill out a form, which is linked below for yourself to access. 
 Here are some pre-made log in details for yourself to use if you need to, where they are used will be stated before them. 
 Customer log in:
