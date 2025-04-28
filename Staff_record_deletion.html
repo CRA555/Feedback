@@ -1,0 +1,32 @@
+<!-- This file is used to gather the data inputted by the user and delete the record matching the data from the file. -->
+<!-- Further information about this page can be found within the python file and the documentation files as well. -->
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Rolsa Technologies: Staff record deletion</title>
+    <h1><a href="/Staff_homepage">Rolsa Technologies:</a> Record deletion</h1>
+</head>
+<body>
+    <nav>
+        <a href="/Staff_homepage">Staff homepage</a>
+        <a href="/Staff_record_amend">Editing of a record</a>
+        <a href="/Services_pricing_log">Services pricing log</a>
+        <a href="/Customer_log">Customer log</a>
+        <a href="Booking_log">Booking log</a>
+    </nav>
+<body>
+<body>
+    <p>
+        This webpage is used for the removal of bookings and customer record. <br>
+        Please make sure the record being deleted is correct and is the requested by the customer. 
+    </p>
+    <p>Please enter the required information.</p>
+    <form method="post" action="{{ url_for('Staff_record_deletion')}}">
+        <select name="file requested" aria-placeholder="Please choose the file being amended." required>
+            <option value="Booking.csv">Booking log</option>
+            <option value="Customer.csv">Customer log</option>
+        </select>
+        <input type="email" name="email of client" placeholder="Please enter the email of the customer that the related record of is being deleted.">
+        <button type="submit">Done</button>
+    </form>
+</body>

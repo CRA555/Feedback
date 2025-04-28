@@ -1,0 +1,67 @@
+/* This file contains all of the styling for the webpage, the reason this file is used is so non of the style has to be coded directly into the HTML files and if changes are made here it will affect all of the pages limiting the amount of time it takes to make changes. */
+
+/* Now this is the the style code for the navigation bar, the styling done to it is changing the color to a dark color which has been done to be easier to read for the user and will lessen the strain for their eyes. */
+nav {
+    background-color:rgb(39, 39, 65) ;
+    
+}
+
+/* Now this is the the style code for the main segment of the body of the pages, the styling done to it is changing the color to a dark color which has been done to be easier to read for the user and will lessen the strain for their eyes, while the text has been made a brighter color to make reading the text easier for the user. */
+body {
+    background-color: rgb(5, 5, 20);
+    text-align: center;
+    p {
+        font-family: 'Times New Roman', Times, serif;
+        color: aliceblue;
+    }
+}
+
+/* Now this is the the style code for the links to other parts of the solution that do not need to be in the navigation bar, they are a bright colored text so that they are simpler to read with the dark background.  */
+a {
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    text-align: center;
+    text-decoration-line: none;
+    padding: 15px;
+}
+
+/* This style code keeps the inputs and labels describing them in a readable format and allows for them to be easier to notice. */
+form{
+    text-align: center;
+    color: aliceblue;
+    box-shadow: none ;
+    label {
+        text-align: center;
+        color: aliceblue;
+    }
+}
+
+/* This style code has been used to make the header standout when it is displayed for the user of the solution. */
+h1 {
+    background-color: rgba(34, 139, 74, 0.459);
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+}
+
+/* This style code is used for the staff login link which can be found at the top left of pages that need to allow access to the file. */
+h2 {
+    color: white;
+    font-size:small;
+    font-weight: normal;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: right;
+}
+
+/* This style code makes sure that the sales pitch will be aligned to the center of the screen and will not display differently from the rest of the code. */
+sales_pitch {
+    text-align: center;
+}
+
+/* This style code controls the size of images used within the solution.  */
+img {
+    width: 300px;
+    height: 400px;
+}

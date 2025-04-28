@@ -1,0 +1,17 @@
+<!-- In this document a check is run to make sure all requests for data alteration are being done by the customer. -->
+<!-- Further information about this page can be found within the python file and the documentation files as well. -->
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Rolsa Technologies: Security check for staff record amend</title>
+    <h1><a href="/Staff_homepage">Rolsa Technologies:</a> Security check for amend</h1>
+</head>
+<body>
+    <p>
+        Please enter the security answer to {{ Customer_security_question }} </p>
+    <form method="post" action="{{ url_for('Security_check_for_staff_record_amend')}}">
+        <input type="text" name='security_answer' placeholder="Please enter the answer to the question." required>
+        <input type="email" name="email" placeholder="Please enter the customer email." required>
+        <button type="submit">Done</button>
+    </form>
+</body>

@@ -1,0 +1,15 @@
+<!-- This file is used to inform the user that their details were wrong and gives them brief information to assist. -->
+<!-- Further information about this page can be found within the python file and the documentation files as well. -->
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Rolsa Technologies: Customer sign up error</title>
+    <h1><a href="/">Rolsa Technologies:</a> Sign up error</h1>
+</head>
+<body>
+    <p>
+        There has been a error. <br>
+        {{ Reason_for_error }} <br>
+        <a href="/Customer_sign_up">Return to Sign up here</a>
+    </p>
+</body>

@@ -1,0 +1,32 @@
+<!-- This file allows the user to sign up to the solution and access the booking system. -->
+<!-- Further information about this page can be found within the python file and the documentation files as well. -->
+
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Rolsa Technologies: Customer sign up</title>
+    <h1><a href="/">Rolsa Technologies:</a> Sign up</h1>
+</head>
+<body>
+    <p>
+        Make a account by following the steps below.
+    </p>
+    <p>Please enter the following details.</p>
+    <form method="post" action="{{ url_for('Customer_sign_up')}}">
+        <input type="text" name="customer_name" placeholder="Please enter your name." required> <br>
+        <input type="password" name="customer_password" placeholder="Please enter your password." required> <br>
+        <input type="password" name="password_check" placeholder="Please re-enter your password." required> <br>
+        <input type="email" name="customer_email" placeholder="Please enter your email here." required> <br>
+        <input type="tel" name="customer_phone_number" placeholder="Please enter your phone number starting with +44." minlength="16" maxlength="16" required> <br>
+        <input type="text" name="security_question" placeholder="Please enter at security question for account security." required> <br>
+        <input type="text" name="security_answer" placeholder="Please enter at security answer for account security." required> <br>
+        <button type="submit">Done</button>
+    </form>
+        If you need already have an account with us, use the link below to sign in. <br>
+        <a href="/Customer_sign_in">Sign in here</a>
+    </p>
+    <p>
+        If you are staff and need to sign in please use the link below for the staff sign in. <br>
+        <a href="/Staff_sign_in">Staff sign in here</a>
+    </p>
+</body>

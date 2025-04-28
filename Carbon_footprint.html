@@ -1,0 +1,48 @@
+<!-- This file is used to work out the Carbon footprint for the user.  -->
+<!-- Further information about this page can be found within the python file and the documentation files as well. -->
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Rolsa Technologies: Carbon footprint</title>
+    <h2><a href="/Staff_sign_in">Staff sign in here</a> </h2>
+    <h1><a href="/">Rolsa Technologies:</a> Carbon footprint</h1> 
+</head>
+<body>
+    <nav>
+        <a href="/">Homepage</a>
+        <a href="/Customer_sign_in">Bookings</a>
+        <a href="/Services">Offered Services</a>
+        <a href="/Contact_information">Contact information</a>
+        <a href="/Services_pricing_log">Services pricing log</a>
+        <a href="/Services">Offered services</a>
+    </nav>
+</body>
+<body>
+    <p>
+        Here at Rolsa Technologies we pride ourselves on helping the reduction of customers carbon footprint whilst giving them the services they deserve. 
+    </p>
+    <p>
+        Carbon footprint: <br>    
+        On this page you can workout your total carbon footprint which will help see if you would benefit even more from are services. <br>
+        Please answer all of these questions truthfully.     
+    </p>
+    <form method="post" action="{{ url_for('Carbon_footprint')}}">
+        <Label for="electric bill">Please enter your monthly electric bill.</Label>
+        <input type="number" name="electric bill" required> <br>
+        <Label for="gas bill">Please enter your monthly gas bill.</Label>
+        <input type="number" name="gas bill" required> <br>
+        <Label for="fuel bill">Please enter your monthly fuel bill.</Label>
+        <input type="number" name="fuel bill" required> <br>
+        <Label for="total_milage">Please enter your yearly milage.</Label>
+        <input type="number" name="total milage" required> <br>
+        <Label for="flights under 4 hours">Please enter your total amount of flights taken under four hours this year.</Label>
+        <input type="number" name="flights under 4 hours" required> <br>
+        <Label for="flights over 4 hours">Please enter your total amount of flights taken over four hours this year.</Label>
+        <input type="number" name="flights over 4 hours" required> <br>
+        <label for="do not recycle newspaper">Please tick if you don't recycle newspaper.</label>
+        <input type="checkbox" class="onoffswitch-checkbox" name ='do not recycle newspaper' value="True"> <br>
+        <label for="do not recycle aluminum and tin">Please tick if you don't recycle aluminum and tin.</label>
+        <input type="checkbox" class="onoffswitch-checkbox" name ='do not recycle aluminum and tin' value="True"> <br>
+        <button type="submit">Done</button>
+    </form>
+</body>

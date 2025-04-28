@@ -1,0 +1,28 @@
+<!-- This file allows the user to sign into the solution and access the booking system. -->
+<!-- Further information about this page can be found within the python file and the documentation files as well. -->
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Rolsa Technologies: Customer sign in</title>
+    <h1><a href="/">Rolsa Technologies:</a> Sign in</h1>
+</head>
+<body>
+    <p>
+        Sign in to your account. <br>
+        If you don't have an account with us you cannot make bookings for are services. <br>
+        Please enter your email and password that you use for this webpage.
+    </p>
+    <form method="post" action="{{ url_for('Customer_sign_in')}}">
+        <input type="email" name="customer_email" placeholder="Please enter your email here." required> <br>
+        <input type="password" name="customer_password" placeholder="Please enter your password here." required> <br>
+        <button type="submit">Done</button>
+    </form>
+    <p>
+        If you need to make account with us please use the sign up link below. <br>
+        <a href="/Customer_sign_up">Sign up here</a>
+    </p>
+    <p>
+        If you are staff and need to sign in please use the link below for the staff sign in. <br>
+        <a href="/Staff_sign_in">Staff sign in here</a>
+    </p>
+</body>

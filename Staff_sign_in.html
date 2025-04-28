@@ -1,0 +1,25 @@
+<!-- This file is used to log the staff members into the staff only area of the solution. -->
+<!-- Further information about this page can be found within the python file and the documentation files as well. -->
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Rolsa Technologies: Staff sign in</title>
+    <h1><a href="/">Rolsa Technologies:</a> Staff sign in</h1>
+</head>
+<body>
+</body>
+<body>
+    <p>
+        Sign into your company account.
+    </p>
+    <p>Please enter your account details in the boxes below.</p>
+    <form method="post" action="{{ url_for('Staff_sign_in')}}">
+        <input type="email" name="staff email" placeholder="Please enter your email here." required>
+        <input type="password" name="staff password" placeholder="Please enter your password here." required>
+        <button type="submit">Done</button>
+    </form>
+    <p>
+        If you are a customer and have clicked on this by mistake please use the link below to return to the sign in page. <br>
+        <a href="/Sign_in">Return to sign in here</a>
+    </p>
+</body>

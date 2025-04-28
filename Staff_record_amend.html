@@ -1,0 +1,38 @@
+<!-- This file is used to gather the data inputted by the user to edit the wanted file. -->
+ <!-- Further information about this page can be found within the python file and the documentation files as well. -->
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Rolsa Technologies: Staff record amend</title>
+    <h1><a href="/Staff_homepage">Rolsa Technologies:</a> Staff record amend</h1>
+</head>
+<body>
+    <nav>
+        <a href="/Staff_homepage">Staff homepage</a>
+        <a href="/Staff_record_deletion">Removal of record</a>
+        <a href="/Services_pricing_log">Services pricing log</a>
+        <a href="/Customer_log">Customer log</a>
+        <a href="Booking_log">Booking log</a>
+    </nav>
+<body>
+    <p>
+        This webpage is used for the alteration of bookings and customer data. <br>
+        Please make  sure the data being changed is correct and that the data it is changed to is correct as well. 
+    </p>
+    <p>Please enter the required information.</p>
+    <form method="post" action="{{ url_for('Staff_record_amend')}}">
+        <select name="file requested" aria-placeholder="Please choose the file being amended." required>
+            <option value="Booking.csv">Booking log</option>
+            <option value="Customer.csv">Customer log</option>
+        </select> <br>
+        <label for="column altered">Please enter the name of the column you are editing. (Make sure it matches the CSV columns)</label> <br>
+        <input type="text" name="column altered" required> <br>
+        <label for="old data">Please enter the data being changed. </label> <br>
+        <input type="text" name="old data" required> <br>
+        <label for="new data">Please enter the new data. ></label> <br>
+        <input type="text" name="new data" required> <br>
+        <label for="email">Please enter the customers email. </label> <br>
+        <input type="email" name="email" required> <br>
+        <button type="submit">Done</button>
+    </form>
+</body>

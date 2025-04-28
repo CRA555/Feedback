@@ -1,0 +1,20 @@
+<!-- This file is used display the users carbon footprint and give a sales pitch to hopefully inquire about your services. -->
+<!-- Further information about this page can be found within the python file and the documentation files as well. -->
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Rolsa Technologies: Total of carbon footprint</title>
+    <h1><a href="/">Rolsa Technologies:</a> Total of carbon footprint</h1>
+</head>
+<body>
+    <p>
+        Your total carbon footprint is {{ Carbon_total }}. <br>
+        With your level of output, {{ Sales_pitch }} <br>
+        Below are the levels of carbon footprint so you can see where you stand within. <br>
+        Lower than 6,000 is considered great since that is very low levels of carbon production. <br>
+        In between 6,000 and 16,000 is considered lower average since that is the good when it comes to the footprint. <br>
+        In between 16,000 and 22,000 is considered average since that is the middle of the road when it comes to carbon production. <br>
+        However over 22,000 is considered high and it is suggested rather heavily that you begin to help limit your carbon production. <br>
+        <a href="/">Return to Homepage.</a>
+    </p>
+</body>
